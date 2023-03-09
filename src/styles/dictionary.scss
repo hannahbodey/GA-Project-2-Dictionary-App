@@ -4,6 +4,20 @@
   font-family: 'PT Sans', sans-serif;
 }
 
+body{
+  margin: 0;
+  background-color: $quaternary;
+}
+
+h1{
+  font-size: 2rem;
+  margin: 50px 0 20px;
+  @media (min-width: 800px){
+    font-size: 3rem;
+    width: 50vw;
+  }
+}
+
 h4{
   margin: 10px 0;
 }
@@ -11,7 +25,6 @@ h4{
 main{
   @include flex-center(row, center);
   align-items: flex-start;
-  background-color: $quaternary
 }
 
 .sidebar{
@@ -19,62 +32,92 @@ main{
   max-height: 80vh;
   width: 15vw;
   display: none;
+  margin-left: 2vw;
+  background-color: whitesmoke;
+  h4{
+    text-decoration: underline;
+  }
   @media (min-width: 800px){
     display: block;
   }
 }
 
-// .word-container, .searchbar{
-//   @include border;
-//   &:not(.searchbar){
-//     min-height: 50vw;
-//   }
-// }
+// ! MEDICAL DICTIONARY PAGE
 
-// .searchbar{
-//   margin-bottom: 15px;
-//   padding: 15px 0;
-// }
-
-// input{
-//   outline: none;
-//   border: none;
-//   text-align: center;
-// }
-
-section{
-  @include flex-center(column, center);
-  @include border;
+.search-section{
   margin: 0 auto;
   width: 90vw;
-  @media (min-width: 800px){
+  @media (min-width: 800px) {
+    justify-content: flex-end;
     max-width: 80vw;
-    justify-content: space-around;
-    flex-direction: row;
+    margin-left: 17.5vw;
   }
 
-  .word-container, .searchbar{
-    @include border;
-    &:not(.searchbar){
-      min-height: 50vw;
-    }
+  .searchbar, input, .word-and-audio, .pronunciation-and-class, .definition{
+    background-color: whitesmoke;
   }
 
   .searchbar{
-    margin-bottom: 15px;
+    @include flex-center(column, center);
+    @include border;
+    border-radius: 50px;
+    margin: 35px 0 15px;
     padding: 15px 0;
+    @media (min-width: 800px){
+      margin: 50px 0;
+      width: 62.5%;
+      max-width: 700px;
+    }
     }
 
   input{
     outline: none;
     border: none;
+    border-radius: 50px;
     text-align: center;
+    font-size: 2rem;
+    font-style: italic;
+    max-width: 100%;
+  }
+}
+
+.dictionary-section {
+  @include flex-center(column, center);
+  margin: 0 auto;
+  width: 90vw;
+  @media (min-width: 800px){
+    max-width: 80vw;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+
+
+  .word-container{
+    @include border;
+    min-height: 40vh;
+    margin-bottom: 20px;
+    @media (min-width: 800px){
+      width: 50vw;
+      max-width: 700px;
+      margin-right: 20px;
+    }
+  }
+  .image-container{
+    background-color: $quaternary;
+    margin-bottom: 20px;
+    @media(min-width: 800px){
+      margin-right: 10vw;
+    }
   }
 
   .word-and-audio, .pronunciation-and-class, .definition, .illustration {
     @include flex-center(row, center);
     @include border;
     @include width-margin;
+    &:not(.illustration){
+      background-color: white;
+    }
     .title{
       width: 70%;
     }
@@ -99,18 +142,32 @@ section{
   }
 
   .illustration {
-    @media (min-width: 800px) {
+    min-height: 40vh;
+    min-width: 300px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    margin: 0;
+    @media (min-width: 800px){
       width: 30%;
-      margin: 0;
     }
   }
-  
+
+}
+
+// ! SCHOOL DICTIONARY PAGE
+
+.school-center{
   .search-section{
-    @media (min-width: 800px) {
-      justify-content: flex-end;
-      margin: 0;
-      margin-left: 15vw;
-      // width: 100vw !important;
+    @media (min-width: 800px){
+      margin-left: 30.7vw;
+    }
+  }
+  .dictionary-section{
+    max-width: 100vw;
+    @media(min-width: 800px){
+      flex-direction: column;
     }
   }
 }
