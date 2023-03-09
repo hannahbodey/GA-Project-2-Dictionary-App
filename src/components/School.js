@@ -8,7 +8,7 @@ const School = () => {
   const [ inputValue, setInputValue ] = useState('')
   const [ entry, setEntry ] = useState('apple')
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => { //! i think we need to catch the error here. if dictionary contains inputValue, setEntry(inputValue). if no entry, return 'word not found'
     e.preventDefault()
     setEntry(inputValue)
   }
@@ -31,9 +31,11 @@ const School = () => {
 
   return (
     <>
+      {/* <h1 style={{ textAlign: 'center' }}>Medical dictionary</h1> */}
       { result &&
       <div className='school-center'>
         <section className='search-section'>
+          <h1 style={{ textAlign: 'center' }}>School dictionary</h1>
           <form className="searchbar" onSubmit={handleSubmit}>
             <label htmlFor="search"></label>
             <input type="text" name="search" placeholder="Type word..." onChange={(e) => handleChange(e) } value={inputValue} />
