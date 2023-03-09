@@ -5,14 +5,17 @@ import { Nav } from 'react-bootstrap'
 
 const PageNavbar = () => {
   return (
-    <Navbar expand='md' className='navbar container'>
+    <Navbar navbar-expand='lg'>  
       <Container>
-        <Navbar.Brand to='/' as={Link}>Home</Navbar.Brand>
-        <Navbar.Toggle aria-controls='definitions-nav' />
+        <Navbar.Brand to='/' as={Link}>🏘️</Navbar.Brand>
         <Navbar.Collapse id='definitions-nav'>
           <Nav>
-            <Nav.Link to='/medical' as={Link}>Medical</Nav.Link>
-            <Nav.Link to='/school' as={Link}>School</Nav.Link>
+            <button>
+              <Nav.Link to='/medical' as={Link}>Medical ⚕️</Nav.Link>
+            </button>
+            <button>
+              <Nav.Link to='/school' as={Link}>School 🏫</Nav.Link>
+            </button>
           </Nav>
         </Navbar.Collapse>
       </Container>
