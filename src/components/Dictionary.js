@@ -1,7 +1,7 @@
 import { useState } from 'react'
 // import { handleChange } from './helpers/functions'
 
-const Dictionary = ({ searchValue, relatedWords, word, audio, pronunciation, wordClass, definition, image }) => {
+const Dictionary = ({ result, relatedWords, image }) => {
 
   // const [ inputValue, setInputValue ] = useState('')
 
@@ -12,6 +12,13 @@ const Dictionary = ({ searchValue, relatedWords, word, audio, pronunciation, wor
   //   return searchValue
   // }
 
+  const definition = result.shortdef
+
+  const definitionSetter = () => {
+    return definition.map(def => {
+      return <p key={def}>{def}</p>
+    })
+  }
 
   return (
     <main>
@@ -34,21 +41,26 @@ const Dictionary = ({ searchValue, relatedWords, word, audio, pronunciation, wor
             <div className="word-and-audio">
               <img className="icons" alt='img' />
               <div className="title">
-                <h2>{word}</h2>
+                <h2>{result.meta.stems[0]}</h2>
               </div>
               <div className="icons" >▶️
-                <audio src={audio}></audio>
+                {result.hwi.prs[0].sound && <audio src={result.hwi.prs[0].sound.audio}></audio>}
+                {/* <audio src={result.hwi.prs[0].sound.audio}></audio> */}
               </div>
             </div>
 
             <div className="pronunciation-and-class">
-              <h4>{pronunciation}</h4>
-              <h4>{wordClass}</h4>
+              {result.hwi.prs[0].mw && <h4>{result.hwi.prs[0].mw}</h4>}
+              {/* <h4>{result.hwi.prs[0].mw}</h4> */}
+              {result.fl && <h4>{result.fl}</h4>}
+              {/* <h4>{result.fl}</h4> */}
             </div>
 
             <div className="definition">
               <h4>Definition</h4>
-              <p>{definition}</p>
+              {result.shortdef && 
+                definitionSetter()}
+              {/* <p>{result.def[0].sseq[0][0][1].dt[0][1]}</p> */}
             </div>
           </div>
         </div>
