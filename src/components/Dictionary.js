@@ -67,7 +67,8 @@ const Dictionary = ({ result, relatedWords, image }) => {
 
         {/* ILLUSTRATION */}
         <div className="illustration">
-          <img src={image} alt="img"></img>
+          {result.art && <img src={`https://www.merriam-webster.com/assets/mw/static/art/dict/${result.art.artid}.gif`} alt="img" />}
+          {/* <img src={`https://www.merriam-webster.com/assets/mw/static/art/dict/${result.art.artid}.gif`} alt="img" /> */}
         </div>
       </section>
     </main>

@@ -78,7 +78,7 @@ const School = () => {
           // pronunciation={entries[0].hwi.prs[0].mw} 
           // wordClass={entries[0].fl} 
           // definition={entries[0].def[0].sseq[0][0][1].dt[0][1]}
-          image={'http://placekitten.com/200/300'} 
+          // image={'http://placekitten.com/200/300'} 
         />
       </>
       }
