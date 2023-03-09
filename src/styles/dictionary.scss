@@ -32,6 +32,11 @@ main{
   max-height: 80vh;
   width: 15vw;
   display: none;
+  margin-left: 2vw;
+  background-color: whitesmoke;
+  h4{
+    text-decoration: underline;
+  }
   @media (min-width: 800px){
     display: block;
   }
@@ -156,7 +161,7 @@ main{
 .school-center{
   .search-section{
     @media (min-width: 800px){
-      margin-left: 29.5vw;
+      margin-left: 30.7vw;
     }
   }
   .dictionary-section{

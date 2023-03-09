@@ -1,4 +1,4 @@
-const Dictionary = ({ result, relatedWords }) => {
+const Dictionary = ({ result }) => {
 
   const definition = result.shortdef
   const definitionSetter = () => {
@@ -41,7 +41,10 @@ const Dictionary = ({ result, relatedWords }) => {
     <main>
       {/* SIDEBAR */}
       <div className="sidebar">
-        {relatedWords}
+        <h4>Similar entries</h4>
+        {result.meta.stems.map(item => {
+          return <p key={item}>{item}</p>
+        })}
       </div>
 
       {/* MAIN */}
