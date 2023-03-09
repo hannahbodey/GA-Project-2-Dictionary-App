@@ -1,0 +1,17 @@
+@mixin flex-center($direction, $text){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+  text-align: $text;
+}
+
+@mixin border(){
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+
+@mixin width-margin(){
+  width: 90%;
+  margin: 10px auto;
+}
