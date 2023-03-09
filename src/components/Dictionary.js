@@ -39,7 +39,7 @@ const Dictionary = ({ result, relatedWords, image }) => {
           <div className="word-container">
 
             <div className="word-and-audio">
-              <img className="icons" alt='img' />
+              <img className="icons" src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Merriam-Webster_logo.svg/1200px-Merriam-Webster_logo.svg.png' alt='img' />
               <div className="title">
                 <h2>{result.meta.stems[0]}</h2>
               </div>

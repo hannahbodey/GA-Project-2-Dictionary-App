@@ -1,5 +1,9 @@
 @import './variables.scss';
 
+* {
+  font-family: 'PT Sans', sans-serif;
+}
+
 h4{
   margin: 10px 0;
 }
@@ -7,6 +11,7 @@ h4{
 main{
   @include flex-center(row, center);
   align-items: flex-start;
+  background-color: $quaternary
 }
 
 .sidebar{

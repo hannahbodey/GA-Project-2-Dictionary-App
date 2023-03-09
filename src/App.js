@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import axios from 'axios'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Navbar from './components/Navbar'
+import PageNavbar from './components/Navbar'
 import Medical from './components/Medical'
 import School from './components/School'
 import Home from './components/Home'
@@ -12,7 +12,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <Navbar/>
+        <PageNavbar/>
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/medical' element={<Medical/>} />
