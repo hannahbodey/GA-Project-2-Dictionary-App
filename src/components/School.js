@@ -32,17 +32,17 @@ const School = () => {
   return (
     <>
       { result &&
-      <>
+      <div className='school-center'>
         <section className='search-section'>
           <form className="searchbar" onSubmit={handleSubmit}>
             <label htmlFor="search"></label>
-            <input type="text" name="search" placeholder="Type here" onChange={(e) => handleChange(e) } value={inputValue} />
+            <input type="text" name="search" placeholder="Type word..." onChange={(e) => handleChange(e) } value={inputValue} />
           </form>
         </section>
         <Dictionary result={result} 
           relatedWords={'check'}
         />
-      </>
+      </div>
       }
     </>
   )

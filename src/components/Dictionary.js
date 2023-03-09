@@ -45,7 +45,7 @@ const Dictionary = ({ result, relatedWords }) => {
       </div>
 
       {/* MAIN */}
-      <section>
+      <section className="dictionary-section">
         {/* ENTRY */}
         <div className="wrapper">
 
@@ -77,9 +77,15 @@ const Dictionary = ({ result, relatedWords }) => {
         </div>
 
         {/* ILLUSTRATION */}
-        <div className="illustration">
-          {result.art && <img src={`https://www.merriam-webster.com/assets/mw/static/art/dict/${result.art.artid}.gif`} alt="img" />}
-        </div>
+        {/* {result.art && <img src={`https://www.merriam-webster.com/assets/mw/static/art/dict/${result.art.artid}.gif`} alt="img" />} */}
+        {result.art && 
+        <div className="image-container">
+          <div 
+            className="illustration" 
+            style={{ backgroundImage: `url('https://www.merriam-webster.com/assets/mw/static/art/dict/${result.art.artid}.gif')` }} 
+            alt="img">
+          </div>
+        </div>}
       </section>
     </main>
   )
