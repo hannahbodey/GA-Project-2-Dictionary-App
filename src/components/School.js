@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Dictionary from './Dictionary'
+import WordNotFound from './WordNotFound'
 
 const School = () => {
 
@@ -28,24 +29,27 @@ const School = () => {
         console.log(err)
       }
     }
-    getData()
+    getData() 
   }, [entry])
 
   return (
     <>
-      {/* <h1 style={{ textAlign: 'center' }}>Medical dictionary</h1> */}
-      { result &&
-      <div className='school-center'>
-        <section className='search-section'>
-          <h1 style={{ textAlign: 'center' }}>School dictionary</h1>
-          <form className="searchbar" onSubmit={handleSubmit}>
-            <label htmlFor="search"></label>
-            <input type="text" name="search" placeholder="Type word..." onChange={(e) => handleChange(e) } value={inputValue} />
-          </form>
-        </section>
-        <Dictionary result={result} name={schoolName}
-        />
-      </div>
+      { (result || result === undefined) &&
+      <>
+        <div className='school-center'>
+          <section className='search-section'>
+            <h1 style={{ textAlign: 'center' }}>School dictionary</h1>
+            <form className="searchbar" onSubmit={handleSubmit}>
+              <label htmlFor="search"></label>
+              <input type="text" name="search" placeholder="Type word..." onChange={(e) => handleChange(e) } value={inputValue} />
+            </form>
+          </section>
+          {result === undefined ?
+            <WordNotFound /> :
+            <Dictionary result={result} name={schoolName}/>
+          }
+        </div>
+      </>
       }
     </>
   )
