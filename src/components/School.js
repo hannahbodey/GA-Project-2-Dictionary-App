@@ -41,8 +41,7 @@ const School = () => {
             <input type="text" name="search" placeholder="Type word..." onChange={(e) => handleChange(e) } value={inputValue} />
           </form>
         </section>
-        <Dictionary result={result} 
-          relatedWords={'check'}
+        <Dictionary result={result} name={result.meta.stems[0]}
         />
       </div>
       }

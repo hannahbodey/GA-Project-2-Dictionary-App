@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-const Dictionary = ({ result }) => {
+const Dictionary = ({ result, name }) => {
 
   const definition = result.shortdef
   const definitionSetter = () => {
@@ -62,7 +62,7 @@ const Dictionary = ({ result }) => {
                   <img className="icons" src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Merriam-Webster_logo.svg/1200px-Merriam-Webster_logo.svg.png' alt='img' />
                   <div className="title">
                     
-                    <h2>{result.meta.stems[0]}</h2>
+                    <h2>{name}</h2>
                     
                   </div>
                   <div onClick={handleClick}>

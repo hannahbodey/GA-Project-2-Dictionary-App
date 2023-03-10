@@ -7,6 +7,7 @@ const Medical = () => {
   const [ result, setResult ] = useState(null)
   const [ inputValue, setInputValue ] = useState('')
   const [ entry, setEntry ] = useState('artery')
+  const [ medicalName, setMedicalName ] = useState('')
 
   const handleSubmit = (e) => { //! i think we need to catch the error here. if dictionary contains inputValue, setEntry(inputValue). if no entry, return 'word not found'
     e.preventDefault()
@@ -22,6 +23,7 @@ const Medical = () => {
       try {
         const { data } = await axios.get(`https://dictionaryapi.com/api/v3/references/medical/json/${entry}?key=d54e4407-3851-411b-bd92-f875ef2ecdd7`)
         setResult(data.filter(item => item.fl !== 'abbreviation')[0])
+        setMedicalName(data[0].meta.id.split(':1'))
       } catch (err) {
         console.log(err)
       }
@@ -40,8 +42,7 @@ const Medical = () => {
             <input type="text" name="search" placeholder="Type word..." onChange={(e) => handleChange(e) } value={inputValue} />
           </form>
         </section>
-        <Dictionary result={result} 
-          relatedWords={'check'}
+        <Dictionary result={result} name={medicalName}
         />
       </>
       }
