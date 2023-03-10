@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 import { useEffect, useState } from 'react'
-import Axios from 'axios'
 import axios from 'axios'
 
 const Home = () => {
@@ -33,7 +32,6 @@ const Home = () => {
           <h3>Word of the Day!</h3>
           { randomEntry &&
             <div className='wordofday'>
-              <p>Every day is a school day...</p>
               <p>word of the day: {randomEntry[0].meta.stems[0]}</p>
               <p>definition: {randomEntry[0].shortdef[0]}</p>
             </div>
