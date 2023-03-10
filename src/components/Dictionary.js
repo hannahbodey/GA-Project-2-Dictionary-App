@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+
 const Dictionary = ({ result }) => {
 
   const definition = result.shortdef
@@ -39,57 +41,63 @@ const Dictionary = ({ result }) => {
 
   return (
     <main>
-      {/* SIDEBAR */}
-      <div className="sidebar">
-        <h4>Similar entries</h4>
-        {result.meta.stems.map(item => {
-          return <p key={item}>{item}</p>
-        })}
-      </div>
-
-      {/* MAIN */}
-      <section className="dictionary-section">
-        {/* ENTRY */}
-        <div className="wrapper">
-
-          <div className="word-container">
-
-            <div className="word-and-audio">
-              <img className="icons" src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Merriam-Webster_logo.svg/1200px-Merriam-Webster_logo.svg.png' alt='img' />
-              <div className="title">
-                <h2>{result.meta.stems[0]}</h2>
-              </div>
-              <div onClick={handleClick}>
-                {result.hwi.prs[0].sound && 
-                audioSetter()}
-                
-              </div>
-            </div>
-
-            <div className="pronunciation-and-class">
-              {result.hwi.prs[0].mw && <h4>{result.hwi.prs[0].mw}</h4>}
-              {result.fl && <h4>{result.fl}</h4>}
-            </div>
-
-            <div className="definition">
-              <h4>Definition</h4>
-              {result.shortdef && 
-                definitionSetter()}
-            </div>
+      {result.meta ? 
+        <>
+          {/* SIDEBAR */}
+          <div className="sidebar">
+            <h4>Similar entries</h4>
+            {result.meta.stems.map(item => {
+              return <p key={item}>{item}</p>
+            })}
           </div>
-        </div>
 
-        {/* ILLUSTRATION */}
-        {/* {result.art && <img src={`https://www.merriam-webster.com/assets/mw/static/art/dict/${result.art.artid}.gif`} alt="img" />} */}
-        {result.art && 
-        <div className="image-container">
-          <div 
-            className="illustration" 
-            style={{ backgroundImage: `url('https://www.merriam-webster.com/assets/mw/static/art/dict/${result.art.artid}.gif')` }} 
-            alt="img">
-          </div>
-        </div>}
-      </section>
+          {/* MAIN */}
+          <section className="dictionary-section">
+            {/* ENTRY */}
+            <div className="wrapper">
+
+              <div className="word-container">
+
+                <div className="word-and-audio">
+                  <img className="icons" src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Merriam-Webster_logo.svg/1200px-Merriam-Webster_logo.svg.png' alt='img' />
+                  <div className="title">
+                    
+                    <h2>{result.meta.stems[0]}</h2>
+                    
+                  </div>
+                  <div onClick={handleClick}>
+                    {result.hwi.prs[0].sound && 
+                    audioSetter()}
+                    
+                  </div>
+                </div>
+
+                <div className="pronunciation-and-class">
+                  {result.hwi.prs[0].mw && <h4>{result.hwi.prs[0].mw}</h4>}
+                  {result.fl && <h4>{result.fl}</h4>}
+                </div>
+
+                <div className="definition">
+                  <h4>Definition</h4>
+                  {result.shortdef && 
+                    definitionSetter()}
+                </div>
+              </div>
+            </div>
+
+            {/* ILLUSTRATION */}
+            {/* {result.art && <img src={`https://www.merriam-webster.com/assets/mw/static/art/dict/${result.art.artid}.gif`} alt="img" />} */}
+            {result.art && 
+          <div className="image-container">
+            <div 
+              className="illustration" 
+              style={{ backgroundImage: `url('https://www.merriam-webster.com/assets/mw/static/art/dict/${result.art.artid}.gif')` }} 
+              alt="img">
+            </div>
+          </div>}
+          </section>
+        </>
+        : (<p>Word not found.</p>)}
     </main>
   )
 }
