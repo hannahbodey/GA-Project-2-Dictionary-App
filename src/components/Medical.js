@@ -9,7 +9,7 @@ const Medical = () => {
   const [ entry, setEntry ] = useState('artery')
   const [ medicalName, setMedicalName ] = useState('')
 
-  const handleSubmit = (e) => { //! i think we need to catch the error here. if dictionary contains inputValue, setEntry(inputValue). if no entry, return 'word not found'
+  const handleSubmit = (e) => {
     e.preventDefault()
     setEntry(inputValue)
   }

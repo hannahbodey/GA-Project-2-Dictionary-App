@@ -8,24 +8,18 @@ const Dictionary = ({ result, name }) => {
       return <p key={def}>{def}</p>
     })
   }
-
   
   let subdirectory
   let audio
   const audioSetter = () => {
     const audioEndpoint = result.hwi.prs[0].sound.audio
-    console.log(audioEndpoint)
     if (audioEndpoint.slice(0,3) === 'bix'){
-      console.log('bix')
       subdirectory = 'bix'
     } else if (audioEndpoint.slice(0,2) === 'gg'){
-      console.log('gg')
       subdirectory = 'gg'
     } else if (audioEndpoint.slice[0,1] === 'number' || audioEndpoint.slice(0,1) === RegExp('^W', '')){
-      console.log('number')
       subdirectory = 'number'
     } else {
-      console.log(audioEndpoint.slice(0,1))
       subdirectory = audioEndpoint.slice(0,1)
     }
     audio = new Audio()
