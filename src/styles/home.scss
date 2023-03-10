@@ -3,29 +3,44 @@
 main {
   // height: 100vh;
   .hero {
-    margin-top: 10vh;
+    h1{
+      width: 100%;
+    }
+    @media (min-width: 800px){
+      margin-top: 10vh;
+    }
   }
   .wordofday {
     margin-bottom: 50px;
   }
-  p {
+  // p {
     // width: 60vh;
-  }
+  // }
 }
 
 .homebutton {
   background-color: $secondary;
   padding: 10px;
-  margin: 20px;
+  margin: 5px 20px;
+  @media (min-width: 800px){
+    padding: 20px 30px;
+    margin: 40px;
+  }
+  display: inline-block;
   font-size: medium;
-  border: 1px solid #000;
+  // border: 1px solid #000;
   border-radius: 8px;
   text-decoration: none;
   color: #000;
   &:hover {
     background-color: lighten($secondary, 10%);
-    transform: scale(1.5);
-    transition: width 2s, height 2s, transform 2s;
+    transform: scale(1.05);
+    // transition: width 2s, height 2s, transform 2s;
+    transition: 0.1s ease-in-out;
   }
 }
 
+
+.wordofday-container{
+  margin-top: 50px;
+}

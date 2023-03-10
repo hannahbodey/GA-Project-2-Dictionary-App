@@ -62,8 +62,8 @@ main{
     @include border;
     border-radius: 50px;
     margin: 35px 0 15px;
-    padding: 15px 0;
     @media (min-width: 800px){
+      padding: 15px 0;
       margin: 50px 0;
       width: 62.5%;
       max-width: 700px;
@@ -78,6 +78,7 @@ main{
     font-size: 2rem;
     font-style: italic;
     max-width: 100%;
+    color: gray;
   }
 }
 

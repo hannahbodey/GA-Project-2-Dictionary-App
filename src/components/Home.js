@@ -29,7 +29,7 @@ const Home = () => {
     <main className="home">
       <div className="hero">
         <h1>What does that mean?</h1>
-        <>
+        <div className='wordofday-container'>
           <h3>Word of the Day!</h3>
           { randomEntry &&
             <div className='wordofday'>
@@ -38,7 +38,7 @@ const Home = () => {
               <p>definition: {randomEntry[0].shortdef[0]}</p>
             </div>
           }
-        </>
+        </div>
         
         <Button className="homebutton" to="/medical" as={Link}>Medical Dictionary</Button>
         <Button className="homebutton" to="/school" as={Link}>School Dictionary</Button>
