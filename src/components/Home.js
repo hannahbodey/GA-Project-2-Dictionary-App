@@ -32,8 +32,8 @@ const Home = () => {
           <h3>Word of the Day!</h3>
           { randomEntry &&
             <div className='wordofday'>
-              <p>word of the day: {randomEntry[0].meta.stems[0]}</p>
-              <p>definition: {randomEntry[0].shortdef[0]}</p>
+              <p className='wordofdayp'>word of the day: {randomEntry[0].meta.stems[0]}</p>
+              <p className='wordofdayp'>definition: {randomEntry[0].shortdef[0]}</p>
             </div>
           }
         </div>

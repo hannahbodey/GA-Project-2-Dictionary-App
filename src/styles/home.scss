@@ -13,9 +13,12 @@ main {
   .wordofday {
     margin-bottom: 50px;
   }
-  // p {
-    // width: 60vh;
-  // }
+  .wordofdayp{
+    margin: 0 auto;
+    @media (min-width: 800px){
+      max-width: 50vw;
+    }
+  }
 }
 
 .homebutton {
