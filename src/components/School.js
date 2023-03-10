@@ -7,8 +7,9 @@ const School = () => {
   const [ result, setResult ] = useState(null)
   const [ inputValue, setInputValue ] = useState('')
   const [ entry, setEntry ] = useState('apple')
+  const [ schoolName, setSchoolName ] = useState('')
 
-  const handleSubmit = (e) => { //! i think we need to catch the error here. if dictionary contains inputValue, setEntry(inputValue). if no entry, return 'word not found'
+  const handleSubmit = (e) => {
     e.preventDefault()
     setEntry(inputValue)
   }
@@ -22,6 +23,7 @@ const School = () => {
       try {
         const { data } = await axios.get(`https://www.dictionaryapi.com/api/v3/references/sd4/json/${entry}?key=33cbba70-f662-4f2e-9dc8-e2df5cc5ea95`)
         setResult(data.filter(item => item.fl !== 'abbreviation')[0])
+        setSchoolName(data[0].meta.stems[0])
       } catch (err) {
         console.log(err)
       }
@@ -41,7 +43,7 @@ const School = () => {
             <input type="text" name="search" placeholder="Type word..." onChange={(e) => handleChange(e) } value={inputValue} />
           </form>
         </section>
-        <Dictionary result={result} name={result.meta.stems[0]}
+        <Dictionary result={result} name={schoolName}
         />
       </div>
       }
