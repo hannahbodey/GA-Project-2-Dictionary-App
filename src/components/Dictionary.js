@@ -80,7 +80,6 @@ const Dictionary = ({ result, name }) => {
             </div>
 
             {/* ILLUSTRATION */}
-            {/* {result.art && <img src={`https://www.merriam-webster.com/assets/mw/static/art/dict/${result.art.artid}.gif`} alt="img" />} */}
             {result.art && 
           <div className="image-container">
             <div 

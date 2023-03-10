@@ -22,8 +22,7 @@ const Medical = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const { data } = await axios.get(`https://dictionaryapi.com/api/v3/references/medical/json/${entry}?key=d54e4407-3851-411b-bd92-f875ef2ecdd7`)
-        console.log(data.filter(item => item.fl !== 'abbreviation')[0])
+        const { data } = await axios.get(`https://dictionaryapi.com/api/v3/references/medical/json/${entry}?key=${process.env.REACT_APP_MEDICAL_KEY}`)
         setResult(data.filter(item => item.fl !== 'abbreviation')[0])
         setMedicalName(data[0].meta.id.split(':1'))
       } catch (err) {

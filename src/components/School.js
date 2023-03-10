@@ -22,7 +22,7 @@ const School = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const { data } = await axios.get(`https://www.dictionaryapi.com/api/v3/references/sd4/json/${entry}?key=33cbba70-f662-4f2e-9dc8-e2df5cc5ea95`)
+        const { data } = await axios.get(`https://www.dictionaryapi.com/api/v3/references/sd4/json/${entry}?key=${process.env.REACT_APP_SCHOOL_KEY}`)
         setResult(data.filter(item => item.fl !== 'abbreviation')[0])
         setSchoolName(data[0].meta.stems[0])
       } catch (err) {
