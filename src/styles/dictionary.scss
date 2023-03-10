@@ -92,8 +92,6 @@ main{
     flex-direction: row;
   }
 
-
-
   .word-container{
     @include border;
     min-height: 40vh;
@@ -172,3 +170,10 @@ main{
     }
   }
 }
+
+.notfound {
+  @include flex-center(row, center);
+  @include border;
+  @include width-margin;
+  background-color: white;
+  }
