@@ -1,7 +1,6 @@
 @import './variables.scss';
 
 main {
-  // height: 100vh;
   .hero {
     h1{
       width: 100%;
@@ -38,7 +37,6 @@ main {
   &:hover {
     background-color: lighten($secondary, 10%);
     transform: scale(1.05);
-    // transition: width 2s, height 2s, transform 2s;
     transition: 0.1s ease-in-out;
   }
 }
