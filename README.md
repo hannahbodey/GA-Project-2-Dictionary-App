@@ -1,32 +1,30 @@
-**Merriam-Webster Dictionary App**
+# Merriam-Webster Dictionary App
 
-**General Assembly Project Two**
+## General Assembly Project Two
 
 This project was to create a React-based App with multiple components that consumed a public API. We completed this at the end of week 6 of the course.
 
-**Deployment link**
+### Deployment link
 
 <https://schoolmedicaldictionary.netlify.app/> - Deployed project
 
 <https://github.com/hannahbodey/React-API-Project> - Git repo
 
-**Getting Started/Code Installation**
-
-**Timeframe & Working Team**
+### Timeframe & Working Team
 
 We had two days to work on this project, including the time that we needed to actually find and source an API. I worked on this project with Giorgia Mineo, <https://github.com/giomine/giomine.github.io>. 
 
-**Technologies Used**
+### Technologies Used
 
-JavaScript React
+-JavaScript React
 
-SCSS, including Bootstrap
+-SCSS, including Bootstrap
 
-Insomnia
+-Insomnia
 
-Excalidraw
+-Excalidraw
 
-**Brief***​*
+### Brief
 
 The second project is to build a React application that consumes a public API. It must:
 
@@ -35,7 +33,7 @@ The second project is to build a React application that consumes a public API. I
 - The app can have a router with several ‘pages’
 - Include wireframes, designed before building the app
 
-**Planning**
+### Planning
 
 We started by discussing our initial ideas. We wanted to build a tool for engaging with different languages or translating certain words, but found it very difficult to find an open-source API to do this. We therefore decided to use the Merriam Webster dictionary. We wanted to twin two dictionaries in order to make our project more interesting. We decided to work with the medical and school dictionary, as we thought that they might be the most different and therefore more interesting to have in comparison.
 
@@ -45,7 +43,7 @@ Having decided upon this, we drafted out a plan on Excalidraw, which featured a 
 
 Initially, we had decided to divide this up with me taking the medical dictionary and Giorgia taking the school dictionary, but as the project progressed, we ultimately did more of this together, and separated out more of the styling. 
 
-**Build/Code Process**
+### Build / Code Process
 
 *Routing between pages*
 
@@ -77,15 +75,13 @@ The two dictionaries had different ways of accessing the same bits of informatio
 
 ![ScreenShot](read-me-screenshots/project-2-build-5.png)
 
-
 At the start of the above code block, you can see { (result || result === undefined) }. We used this to ensure that the below JSX components were only returned if there was a result, or if the result was undefined. To catch undefined results, we also had an additional control flow section where the dictionary entry would not show, and instead you would have a ‘word not found’ message. Having the initial control flow allowed the page to build the search bar regardless of whether or not an appropriate result came back, which ensured that the user would be able to search for a new word without having to refresh the page. 
 
-**Challenges**
+### Challenges
 
 A significant challenge was the retrieval of information from the API. The architecture of the API was such that it took a lot of careful deconstruction, and the words were not always retrieved in an intuitive way; for example, when searching ‘cat’ in the school dictionary, the first entry was ‘catalog’, not ‘cat’ the animal. This meant that we had to filter out any abbreviated words which were appearing first in the entries in order to ensure that the logical response was returned to the user. 
 
 ![ScreenShot](read-me-screenshots/project-2-challenges-1.png)
-
 
 There were also instances where the names returned from the dictionary included numbers, e.g. doctor:1 (as seen above). Given that we were unable to check the entire dictionary for these entries, we resorted to simplifying the solution slightly and removing the :1 manually from the entries before they appeared.
 
@@ -93,11 +89,11 @@ There were also instances where the names returned from the dictionary included 
 
 Quite a lot of error handling went into this project, which was complex to construct given the diverse and complex nature of the API. In future, I think it would be more efficient to work backwards a little bit more in order to try and anticipate errors and build the error handling as we went through, rather than having to try and build it afterwards, which caused quite a lot of confusion and difficulty. I think this could be achieved by more careful dissection of the API in the first place, especially looking at a wider range of entries in order to try and see in advance the various anomalies that we ended up finding. I think it would then have been helpful to try and map out (either with pseudocode or with another wireframe) what control flow would help where in order to combat any inconsistencies. 
 
-**Wins**
+### Wins
 
 Our dictionary successfully displays on both mobile and desktop, and both dictionaries interact successfully with the API and allow the user to search for a new word. The pages transition neatly and clearly and there is consistency in the interface for the user.
 
-**Key Learnings/Takeaways**
+### Key Learnings and Takeaways
 
 Throughout this project, I greatly improved my understanding of how to access different sections of the API, especially dynamically, so that the page could be relevant and usable with unpredictable user searches. 
 
@@ -105,11 +101,11 @@ Twinned with this, I also feel significantly more confident in the use of separa
 
 I also feel that I developed my understanding and use of GitHub, as this was the first time that we’d used joint repositories. 
 
-**Bugs**
+### Bugs
 
 We were having issues with some entries that were typed in incorrectly, but we think that this has now been resolved. 
 
-**Future Improvements**
+### Future Improvements
 
 We initially wanted to include a search bar that responded to voice commands, but due to time constraints, were not able to add this in. 
 
